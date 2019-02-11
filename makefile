@@ -1,4 +1,4 @@
-CC = g++ -g -O0 -Wno-deprecated
+CC = g++ -g -O0 -Wno-deprecated -std=c++11
 
 tag = -i
 
