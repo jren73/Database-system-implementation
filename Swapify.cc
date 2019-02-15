@@ -27,6 +27,11 @@ Swapify <Type> :: operator Type () {
 	return data;
 }
 
+template <class Type> Type&
+	Swapify <Type> :: getData(){
+	        return data;
+	}
+
 template <class Type> void
 Swapify <Type> :: Swap (Swapify &withMe) {
 	SWAP(data, withMe.data);

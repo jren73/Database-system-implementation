@@ -14,16 +14,6 @@ using namespace std;
 
 class Catalog {
 private:
-	sqlite3 *db;
-	map <string, Schema> record;
-	
-	struct tableListRecord{
-		vector<string> name;
-		vector<unsigned int> noOfTup;
-		vector<string> path;
-	};
-	tableListRecord tabList;
-	
 	/* Data structures to keep catalog data in memory.
 	 * A series of data structures you may find useful are included.
 	 * Efficient data structures are recommended.

@@ -39,9 +39,9 @@ int main (int argc, char* argv[]) {
 
 			string aType;
 			int at = j % 3;
-			if (0 == at) aType = "Integer";
-			else if (1 == at) aType = "Float";
-			else if (2 == at) aType = "String";
+			if (0 == at) aType = "INTEGER";
+			else if (1 == at) aType = "FLOAT";
+			else if (2 == at) aType = "STRING";
 			types.push_back(aType);
 		}
 
@@ -72,9 +72,10 @@ int main (int argc, char* argv[]) {
 	////////////////////////////////
 	catalog.Save();
         cout << "Catalog saved"<<endl;
-	cout << catalog << endl; cout.flush();
+	cout << catalog << endl; 
+	cout.flush();
 
-
+/*
 	////////////////////////////////
 	vector<string> tables;
 	catalog.GetTables(tables);
@@ -122,8 +123,7 @@ int main (int argc, char* argv[]) {
 			cout << tName << "." << aName << " distinct = " << distinct << endl;
 		}
 	}
-
-
+*/
 	////////////////////////////////
 	for (int i = 0; i < 5; i++) {
 		char tN[20]; sprintf(tN, "T_%d", i);

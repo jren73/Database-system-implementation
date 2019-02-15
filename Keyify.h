@@ -51,6 +51,7 @@ public:
 	Keyify (const Type castFromMe);
 
 	operator Type();
+	Type getData();
 	int IsEqual(Keyify &checkMe);
 	int LessThan(Keyify &checkMe);
 

@@ -27,6 +27,11 @@ Keyify <Type> :: operator Type () {
 	return data;
 }
 
+template <class Type> Type
+Keyify <Type> :: getData () {
+        return data;
+}
+
 template <class Type> void
 Keyify <Type> :: Swap (Keyify &withMe) {
 	SWAP(data, withMe.data);
