@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <map>
-#include "InefficientMap.h"
+
 #include "Schema.h"
 #include <sqlite3.h>
 
@@ -15,16 +15,15 @@ using namespace std;
 class Catalog {
 private:
 	sqlite3 *db;
-
+	map <string, Schema> record;
+	
 	struct tableListRecord{
 		vector<string> name;
-		vector<unsigned int> noTuples;
-		vector<string> location;
+		vector<unsigned int> noOfTup;
+		vector<string> path;
 	};
 	tableListRecord tabList;
-
-	std::map <string, Schema> record;  //red-black tree
-	//InefficientMap <string, Schema> records;
+	
 	/* Data structures to keep catalog data in memory.
 	 * A series of data structures you may find useful are included.
 	 * Efficient data structures are recommended.

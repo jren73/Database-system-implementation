@@ -54,12 +54,14 @@ int main (int argc, char* argv[]) {
 				string aN = atts[j];
 				catalog.SetNoDistinct(tName, atts[j], dist);
 			}
+                        cout<<"Set No Distinct"<<endl;
 
 			unsigned int tuples = i * 1000;
 			catalog.SetNoTuples(tName, tuples);
 
 			string path = tName + ".dat";
 			catalog.SetDataFile(tName, path);
+                        cout<<"Set Data Path"<<endl;
 		}
 		else {
 			cout << "CREATE TABLE " << tName << " FAIL" << endl;
@@ -69,6 +71,7 @@ int main (int argc, char* argv[]) {
 
 	////////////////////////////////
 	catalog.Save();
+        cout << "Catalog saved"<<endl;
 	cout << catalog << endl; cout.flush();
 
 
