@@ -1,0 +1,12 @@
+for k in $( seq 1 10 )
+do
+  file_path=$"/home/cc/Database/Queries/"${k}
+#  #num = ${k}
+  tail=${file_path}$".sql"
+  echo $tail
+  ./main.out < "$tail"
+  
+done
+#cmd="./main.out < Queries/1.sql"
+#$cmd
+

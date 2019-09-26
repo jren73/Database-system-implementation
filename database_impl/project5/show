@@ -1,0 +1,6 @@
+for k in $( seq 1 20 )
+do
+  file_path=${k}$".output"
+  wc -l $file_path
+
+done

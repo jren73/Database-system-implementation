@@ -1,0 +1,93 @@
+OK!
+
+OK!
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (n_name:STRING [25])
+Out File: output.txt
+Producer:
+{
+DISTINCT 
+Schema: (n_name:STRING [25])
+Producer: PROJECT: 
+Schema In: (c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:FLOAT [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:FLOAT [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Schema Out: (n_name:STRING [25])
+# Attributes Input: 21
+# Attributes Output: 1
+Keep: 9 
+Producer: JOIN
+Left Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:FLOAT [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Right Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:FLOAT [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Schema Out:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:FLOAT [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:FLOAT [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Predicate:
+(Right[1] = Left[0] (Integer))
+Left Operator:
+{
+JOIN
+Left Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:FLOAT [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Right Schema:
+(n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Schema Out:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:FLOAT [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Predicate:
+(Right[0] = Left[3] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:FLOAT [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+
+}
+Right Operator:
+{
+SCAN
+Schema:(n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+
+}
+
+}
+Right Operator:
+{
+SELECT
+Schema: (o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:FLOAT [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Predicate: (Left[4] > Const (String)) AND (Left[4] < Const (String))
+Producer: SCAN
+Schema:(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:FLOAT [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+
+
+}
+
+
+
+}
+
+)
+{n_name: ALGERIA}
+{n_name: ARGENTINA}
+{n_name: BRAZIL}
+{n_name: CANADA}
+{n_name: CHINA}
+{n_name: EGYPT}
+{n_name: FRANCE}
+{n_name: GERMANY}
+{n_name: INDIA}
+{n_name: INDONESIA}
+{n_name: IRAN}
+{n_name: IRAQ}
+{n_name: JAPAN}
+{n_name: JORDAN}
+{n_name: KENYA}
+{n_name: MOROCCO}
+{n_name: MOZAMBIQUE}
+{n_name: PERU}
+{n_name: ROMANIA}
+{n_name: RUSSIA}
+{n_name: SAUDI ARABIA}
+{n_name: UNITED KINGDOM}
+{n_name: UNITED STATES}
+{n_name: VIETNAM}
+5: syntax error at 
+Error: Query is not correct!

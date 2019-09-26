@@ -1,0 +1,6 @@
+OK!
+
+
+{ps_partkey: 123, ps_suppkey: 24, ps_availqty: 9881, ps_supplycost: 107.03}
+{ps_partkey: 123, ps_suppkey: 50, ps_availqty: 5638, ps_supplycost: 818.19}
+{ps_partkey: 123, ps_suppkey: 76, ps_availqty: 2692, ps_supplycost: 217.01}

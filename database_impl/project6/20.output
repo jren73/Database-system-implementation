@@ -1,0 +1,25 @@
+OK!
+
+OK!
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [1])
+Out File: output.txt
+Producer:
+{
+SUM
+SchemaIn: (l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+SchemaOut: (SUM:FLOAT [1]) FunctionProducer: SELECT
+Schema: (l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Predicate: (Left[6] < Const (Float)) AND (Left[4] < Const (Integer))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+
+
+
+}
+
+)
+{SUM: 2.03395e+06}
+5: syntax error at 
+Error: Query is not correct!

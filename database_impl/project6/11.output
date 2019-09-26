@@ -1,0 +1,93 @@
+OK!
+
+OK!
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [10000], s_suppkey:INTEGER [10000])
+Out File: output.txt
+Producer:
+{
+GROUP BY
+SchemaIn: (ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000], p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+SchemaOut: (SUM:FLOAT [10000], s_suppkey:INTEGER [10000])
+GroupingAtts: {5:Integer}
+Function:
+Function
+Producer:
+{
+JOIN
+Left Schema:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Right Schema:
+(p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+Schema Out:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000], p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+Predicate:
+(Right[0] = Left[0] (Integer))
+Left Operator:
+{
+JOIN
+Left Schema:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124])
+Right Schema:
+(s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Schema Out:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Predicate:
+(Right[0] = Left[1] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124])
+
+}
+Right Operator:
+{
+SELECT
+Schema: (s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Predicate: (Left[5] < Const (Float))
+Producer: SCAN
+Schema:(s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+
+
+}
+
+}
+Right Operator:
+{
+SELECT
+Schema: (p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+Predicate: (Left[5] < Const (Integer))
+Producer: SCAN
+Schema:(p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+
+
+}
+
+}
+
+}
+
+)
+{SUM: 4930.33, s_suppkey: 5}
+{SUM: 2358.21, s_suppkey: 15}
+{SUM: 3387.84, s_suppkey: 20}
+{SUM: 874.74, s_suppkey: 22}
+{SUM: 3943.39, s_suppkey: 26}
+{SUM: 2026.69, s_suppkey: 28}
+{SUM: 4435.89, s_suppkey: 29}
+{SUM: 4281.19, s_suppkey: 34}
+{SUM: 4328.19, s_suppkey: 40}
+{SUM: 4220.02, s_suppkey: 52}
+{SUM: 4423.47, s_suppkey: 56}
+{SUM: 4348.54, s_suppkey: 57}
+{SUM: 2115.25, s_suppkey: 58}
+{SUM: 2309.33, s_suppkey: 59}
+{SUM: 3404.39, s_suppkey: 65}
+{SUM: 2790.52, s_suppkey: 75}
+{SUM: 5544.32, s_suppkey: 80}
+{SUM: 3895.13, s_suppkey: 81}
+{SUM: 2534.26, s_suppkey: 82}
+{SUM: 5555.46, s_suppkey: 93}
+6: syntax error at 
+Error: Query is not correct!

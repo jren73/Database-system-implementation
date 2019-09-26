@@ -1,0 +1,569 @@
+/home/cc/Database/Queries/1.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (partsupp)
+Scan Table (supplier)
+Scan Table (part)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (s_suppkey:INTEGER [10000], SUM:FLOAT [10000])
+Producer:
+{
+
+GROUP BY
+SchemaOut: (s_suppkey:INTEGER [10000], SUM:FLOAT [10000])
+GroupingAtts: {5:Integer}
+Function: Producer:
+{
+
+JOIN
+Left Schema:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:INTEGER [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_comment:STRING [10000], s_acctbal:INTEGER [9955])
+Right Schema:
+(p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:INTEGER [20899], p_comment:STRING [131753])
+Schema Out:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:INTEGER [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_comment:STRING [10000], s_acctbal:INTEGER [9955], p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:INTEGER [20899], p_comment:STRING [131753])
+Predicate:
+(Right[0] = Left[0] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:INTEGER [99865], ps_comment:STRING [799124])
+Right Schema:
+(s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_comment:STRING [10000], s_acctbal:INTEGER [9955])
+Schema Out:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:INTEGER [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_comment:STRING [10000], s_acctbal:INTEGER [9955])
+Predicate:
+(Right[0] = Left[1] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:INTEGER [99865], ps_comment:STRING [799124])
+}
+Right Operator:
+{
+
+SELECT
+Predicate: (Left[6] > Const (Integer))
+Producer: SCAN
+Schema:(s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_comment:STRING [10000], s_acctbal:INTEGER [9955])
+
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:INTEGER [20899], p_comment:STRING [131753])
+}
+
+}
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/2.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (orders)
+Scan Table (customer)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (c_name:STRING [150000], SUM:FLOAT [150000])
+Producer:
+{
+
+GROUP BY
+SchemaOut: (c_name:STRING [150000], SUM:FLOAT [150000])
+GroupingAtts: {10:String}
+Function: Producer:
+{
+
+JOIN
+Left Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Right Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Schema Out:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Predicate:
+(Right[0] = Left[1] (Integer))
+Left Operator:
+{
+
+SELECT
+Predicate: (Left[3] < Const (Integer))
+Producer: SCAN
+Schema:(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+
+}
+Right Operator:
+{
+SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+}
+
+}
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/3.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (lineitem)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (l_suppkey:INTEGER [10000], l_partkey:INTEGER [200000], l_orderkey:INTEGER [1500000])
+Producer:
+{
+
+PROJECT: 
+Schema Out: (l_suppkey:INTEGER [10000], l_partkey:INTEGER [200000], l_orderkey:INTEGER [1500000])
+# Attributes Input: 16
+# Attributes Output: 3
+Keep: 2 1 0 
+Producer: 
+SELECT
+Predicate: (Left[8] = Const (String)) AND (Left[6] < Const (Float)) AND (Left[14] = Const (String))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/4.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (customer)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (c_acctbal:INTEGER [140187], c_address:STRING [150000], c_name:STRING [150000])
+Producer:
+{
+
+DISTINCT 
+Schema: (c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Producer: 
+PROJECT: 
+Schema Out: (c_acctbal:INTEGER [140187], c_address:STRING [150000], c_name:STRING [150000])
+# Attributes Input: 8
+# Attributes Output: 3
+Keep: 5 2 1 
+Producer: 
+SELECT
+Predicate: (Left[1] = Const (String))
+Producer: SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/5.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (lineitem)
+Scan Table (orders)
+Scan Table (customer)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [1])
+Producer:
+{
+
+SUM
+SchemaOut: (SUM:FLOAT [1])
+FunctionProducer: 
+JOIN
+Left Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Right Schema:
+(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Schema Out:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Predicate:
+(Left[0] = Right[0] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Right Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Schema Out:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Predicate:
+(Right[0] = Left[1] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+}
+Right Operator:
+{
+
+SELECT
+Predicate: (Left[1] = Const (String))
+Producer: SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+
+}
+
+}
+Right Operator:
+{
+
+SELECT
+Predicate: (Left[4] > Const (Integer)) AND (Left[6] < Const (Float))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+
+}
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/6.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (lineitem)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (l_orderkey:INTEGER [1500000])
+Producer:
+{
+
+PROJECT: 
+Schema Out: (l_orderkey:INTEGER [1500000])
+# Attributes Input: 16
+# Attributes Output: 1
+Keep: 0 
+Producer: 
+SELECT
+Predicate: (Left[4] > Const (Integer))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/7.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (region)
+Scan Table (nation)
+Scan Table (customer)
+Scan Table (orders)
+Scan Table (lineitem)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (c_name:STRING [150000])
+Producer:
+{
+
+DISTINCT 
+Schema: (r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Producer: 
+PROJECT: 
+Schema Out: (c_name:STRING [150000])
+# Attributes Input: 40
+# Attributes Output: 1
+Keep: 8 
+Producer: 
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Right Schema:
+(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Predicate:
+(Right[0] = Left[15] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Right Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Predicate:
+(Right[1] = Left[7] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Right Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Predicate:
+(Right[3] = Left[3] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5])
+Right Schema:
+(n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Predicate:
+(Right[2] = Left[0] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5])
+}
+Right Operator:
+{
+SCAN
+Schema:(n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+}
+
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/8.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (region)
+Scan Table (nation)
+Scan Table (customer)
+Scan Table (orders)
+Scan Table (lineitem)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (l_discount:FLOAT [11])
+Producer:
+{
+
+PROJECT: 
+Schema Out: (l_discount:FLOAT [11])
+# Attributes Input: 40
+# Attributes Output: 1
+Keep: 30 
+Producer: 
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Right Schema:
+(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Predicate:
+(Right[0] = Left[15] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Right Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Predicate:
+(Right[1] = Left[7] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Right Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Predicate:
+(Right[3] = Left[3] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5])
+Right Schema:
+(n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Schema Out:
+(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5], n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+Predicate:
+(Right[2] = Left[0] (Integer))
+Left Operator:
+{
+
+SELECT
+Predicate: (Left[0] = Const (Integer))
+Producer: SCAN
+Schema:(r_regionkey:INTEGER [5], r_name:STRING [5], r_comment:STRING [5])
+
+}
+Right Operator:
+{
+SCAN
+Schema:(n_nationkey:INTEGER [25], n_name:STRING [25], n_regionkey:INTEGER [5], n_comment:STRING [25])
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+}
+
+}
+Right Operator:
+{
+
+SELECT
+Predicate: (Left[0] < Const (Integer))
+Producer: SCAN
+Schema:(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+}
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/9.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (lineitem)
+Scan Table (orders)
+Scan Table (customer)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [1])
+Producer:
+{
+
+SUM
+SchemaOut: (SUM:FLOAT [1])
+FunctionProducer: 
+JOIN
+Left Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Right Schema:
+(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Schema Out:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968], l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Predicate:
+(Left[0] = Right[0] (Integer))
+Left Operator:
+{
+
+JOIN
+Left Schema:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+Right Schema:
+(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Schema Out:
+(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071], c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+Predicate:
+(Right[0] = Left[1] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(o_orderkey:INTEGER [1500000], o_custkey:INTEGER [99996], o_orderstatus:STRING [3], o_totalprice:INTEGER [1464566], o_orderdate:STRING [2406], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:STRING [1], o_comment:STRING [1482071])
+}
+Right Operator:
+{
+
+SELECT
+Predicate: (Left[1] = Const (String))
+Producer: SCAN
+Schema:(c_custkey:INTEGER [150000], c_name:STRING [150000], c_address:STRING [150000], c_nationkey:INTEGER [25], c_phone:STRING [150000], c_acctbal:INTEGER [140187], c_mktsegment:STRING [5], c_comment:STRING [149968])
+
+}
+
+}
+Right Operator:
+{
+
+SELECT
+Predicate: (Left[4] > Const (Integer)) AND (Left[6] < Const (Float))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+
+}
+
+
+}
+
+)
+ Press any other number else to continue
+/home/cc/Database/Queries/10.sql
+Enter a query and hit ctrl+D when done: 
+OK!
+Scan Table (lineitem)
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [1])
+Producer:
+{
+
+SUM
+SchemaOut: (SUM:FLOAT [1])
+FunctionProducer: 
+SELECT
+Predicate: (Left[6] < Const (Float)) AND (Left[4] < Const (Integer))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+
+
+}
+
+)
+ Press any other number else to continue

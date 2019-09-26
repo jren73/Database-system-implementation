@@ -1,0 +1,165 @@
+OK!
+
+OK!
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [10000], s_suppkey:INTEGER [10000])
+Out File: output.txt
+Producer:
+{
+GROUP BY
+SchemaIn: (ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000], p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+SchemaOut: (SUM:FLOAT [10000], s_suppkey:INTEGER [10000])
+GroupingAtts: {5:Integer}
+Function:
+Function
+Producer:
+{
+JOIN
+Left Schema:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Right Schema:
+(p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+Schema Out:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000], p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+Predicate:
+(Right[0] = Left[0] (Integer))
+Left Operator:
+{
+JOIN
+Left Schema:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124])
+Right Schema:
+(s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Schema Out:
+(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124], s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+Predicate:
+(Right[0] = Left[1] (Integer))
+Left Operator:
+{
+SCAN
+Schema:(ps_partkey:INTEGER [200000], ps_suppkey:INTEGER [10000], ps_availqty:INTEGER [9999], ps_supplycost:FLOAT [99865], ps_comment:STRING [799124])
+
+}
+Right Operator:
+{
+SCAN
+Schema:(s_suppkey:INTEGER [10000], s_name:STRING [10000], s_address:STRING [10000], s_nationkey:INTEGER [25], s_phone:STRING [10000], s_acctbal:FLOAT [9955], s_comment:STRING [10000])
+
+}
+
+}
+Right Operator:
+{
+SCAN
+Schema:(p_partkey:INTEGER [200000], p_name:STRING [199996], p_mfgr:STRING [5], p_brand:STRING [25], p_type:STRING [150], p_size:INTEGER [50], p_container:STRING [40], p_retailprice:FLOAT [20899], p_comment:STRING [131753])
+
+}
+
+}
+
+}
+
+)
+{SUM: 40573.1, s_suppkey: 1}
+{SUM: 38104.5, s_suppkey: 2}
+{SUM: 41437.9, s_suppkey: 3}
+{SUM: 42178.4, s_suppkey: 4}
+{SUM: 43400, s_suppkey: 5}
+{SUM: 34764.2, s_suppkey: 6}
+{SUM: 39190.8, s_suppkey: 7}
+{SUM: 40763.2, s_suppkey: 8}
+{SUM: 41821.9, s_suppkey: 9}
+{SUM: 35009.9, s_suppkey: 10}
+{SUM: 40980.9, s_suppkey: 11}
+{SUM: 44461.4, s_suppkey: 12}
+{SUM: 41346.8, s_suppkey: 13}
+{SUM: 40175.2, s_suppkey: 14}
+{SUM: 40892.1, s_suppkey: 15}
+{SUM: 43494.2, s_suppkey: 16}
+{SUM: 41992.6, s_suppkey: 17}
+{SUM: 42252.4, s_suppkey: 18}
+{SUM: 39727.6, s_suppkey: 19}
+{SUM: 37509.5, s_suppkey: 20}
+{SUM: 36588.9, s_suppkey: 21}
+{SUM: 43013.4, s_suppkey: 22}
+{SUM: 42328.6, s_suppkey: 23}
+{SUM: 35418.1, s_suppkey: 24}
+{SUM: 39771.9, s_suppkey: 25}
+{SUM: 40738.6, s_suppkey: 26}
+{SUM: 39752.6, s_suppkey: 27}
+{SUM: 36778.2, s_suppkey: 28}
+{SUM: 41610.6, s_suppkey: 29}
+{SUM: 41814.7, s_suppkey: 30}
+{SUM: 34447.3, s_suppkey: 31}
+{SUM: 38141, s_suppkey: 32}
+{SUM: 33668.7, s_suppkey: 33}
+{SUM: 43262.6, s_suppkey: 34}
+{SUM: 44347.9, s_suppkey: 35}
+{SUM: 42254.4, s_suppkey: 36}
+{SUM: 37168.2, s_suppkey: 37}
+{SUM: 37548.2, s_suppkey: 38}
+{SUM: 36868.5, s_suppkey: 39}
+{SUM: 42354.2, s_suppkey: 40}
+{SUM: 40252.5, s_suppkey: 41}
+{SUM: 40566.5, s_suppkey: 42}
+{SUM: 40395.4, s_suppkey: 43}
+{SUM: 36977, s_suppkey: 44}
+{SUM: 40072.6, s_suppkey: 45}
+{SUM: 40066.2, s_suppkey: 46}
+{SUM: 32698.3, s_suppkey: 47}
+{SUM: 40858.8, s_suppkey: 48}
+{SUM: 34662.8, s_suppkey: 49}
+{SUM: 39470.4, s_suppkey: 50}
+{SUM: 40561.9, s_suppkey: 51}
+{SUM: 36930.6, s_suppkey: 52}
+{SUM: 40228.9, s_suppkey: 53}
+{SUM: 36392, s_suppkey: 54}
+{SUM: 44913.2, s_suppkey: 55}
+{SUM: 37179.8, s_suppkey: 56}
+{SUM: 40637.2, s_suppkey: 57}
+{SUM: 43026, s_suppkey: 58}
+{SUM: 39990.9, s_suppkey: 59}
+{SUM: 35647.9, s_suppkey: 60}
+{SUM: 35420.4, s_suppkey: 61}
+{SUM: 37451.9, s_suppkey: 62}
+{SUM: 37644.4, s_suppkey: 63}
+{SUM: 41511.3, s_suppkey: 64}
+{SUM: 37458.2, s_suppkey: 65}
+{SUM: 39044.5, s_suppkey: 66}
+{SUM: 35236.1, s_suppkey: 67}
+{SUM: 39783, s_suppkey: 68}
+{SUM: 38067.4, s_suppkey: 69}
+{SUM: 38201.5, s_suppkey: 70}
+{SUM: 43039.7, s_suppkey: 71}
+{SUM: 36681.2, s_suppkey: 72}
+{SUM: 34782.6, s_suppkey: 73}
+{SUM: 36164.2, s_suppkey: 74}
+{SUM: 41210, s_suppkey: 75}
+{SUM: 35729.4, s_suppkey: 76}
+{SUM: 43961.5, s_suppkey: 77}
+{SUM: 40892.4, s_suppkey: 78}
+{SUM: 40706.6, s_suppkey: 79}
+{SUM: 39406.9, s_suppkey: 80}
+{SUM: 41789.1, s_suppkey: 81}
+{SUM: 43514.6, s_suppkey: 82}
+{SUM: 43414.2, s_suppkey: 83}
+{SUM: 41990.6, s_suppkey: 84}
+{SUM: 38400.4, s_suppkey: 85}
+{SUM: 38656.2, s_suppkey: 86}
+{SUM: 37608.6, s_suppkey: 87}
+{SUM: 38506.4, s_suppkey: 88}
+{SUM: 39932.1, s_suppkey: 89}
+{SUM: 38564.9, s_suppkey: 90}
+{SUM: 38876.5, s_suppkey: 91}
+{SUM: 41851.9, s_suppkey: 92}
+{SUM: 39817.9, s_suppkey: 93}
+{SUM: 42651.6, s_suppkey: 94}
+{SUM: 40905.7, s_suppkey: 95}
+{SUM: 37411.4, s_suppkey: 96}
+{SUM: 35115.5, s_suppkey: 97}
+{SUM: 38792.2, s_suppkey: 98}
+{SUM: 42544.3, s_suppkey: 99}
+{SUM: 45217.8, s_suppkey: 100}
+6: syntax error at 
+Error: Query is not correct!

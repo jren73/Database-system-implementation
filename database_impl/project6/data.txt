@@ -1,0 +1,32 @@
+OK!
+QUERY EXECUTION TREE(
+OUTPUT
+Schema: (SUM:FLOAT [11], l_discount:FLOAT [11])
+Out File: output.txt
+Producer:
+{
+GROUP BY
+SchemaIn: (l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+SchemaOut: (SUM:FLOAT [11], l_discount:FLOAT [11])
+GroupingAtts: {6:Float}
+Function:
+Function
+Producer:
+{
+SELECT
+Schema: (l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+Predicate: (Left[4] > Const (Integer)) AND (Left[6] > Const (Float))
+Producer: SCAN
+Schema:(l_orderkey:INTEGER [1500000], l_partkey:INTEGER [200000], l_suppkey:INTEGER [10000], l_linenumber:INTEGER [7], l_quantity:INTEGER [50], l_extendedprice:FLOAT [933900], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2526], l_commitdate:STRING [2466], l_receiptdate:STRING [2554], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [4580667])
+File
+
+}
+
+}
+
+)
+{SUM: 8.84304e+06, l_discount: 0.06}
+{SUM: 8.86066e+06, l_discount: 0.07}
+{SUM: 8.80772e+06, l_discount: 0.08}
+{SUM: 8.83679e+06, l_discount: 0.09}
+{SUM: 8.84276e+06, l_discount: 0.1}
